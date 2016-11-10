@@ -21,7 +21,6 @@
    ";; This buffer is for notes you don't want to save, and for Lisp evaluation.
 ;; If you want to create a file, visit that file with C-x C-f,
 ;; then enter the text in that file's own buffer.
-
 ")
  '(scroll-error-top-bottom nil)
  '(set-mark-command-repeat-pop nil)
@@ -39,7 +38,28 @@
 (setq ergoemacs-keyboard-layout "us") ;; Assumes QWERTY keyboard layout
 (ergoemacs-mode 1)
 
-;; kommentti kommentti
+;(autoload 'wcheck-mode "wcheck-mode"
+ ; "Toggle wcheck-mode." t)
+;(autoload 'wcheck-change-language "wcheck-mode"
+;  "Switch wcheck-mode languages." t)
+;(autoload 'wcheck-actions "wcheck-mode"
+;  "Open actions menu." t)
+;(autoload 'wcheck-jump-forward "wcheck-mode"
+;  "Move point forward to next marked text area." t)
+;(autoload 'wcheck-jump-backward "wcheck-mode"
+;  "Move point backward to previous marked text area." t)
+
+(setq ispell-program-name "C:\Devel\Tools\hunspell_UNO_1.1.2_OOo_2.0_Windows/hunspell680mi.dll")
+;; "en_US" is key to lookup in `ispell-local-dictionary-alist`, please note it will be passed to hunspell CLI as "-d" parameter
+(setq ispell-local-dictionary "english") 
+(setq ispell-local-dictionary-alist
+      '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)))
+
+(add-to-list 'exec-path "C:\Devel\Tools\ispell\ispell\bin")
+(setq ispell-program-name "ispell")
+(setq ispell-personal-dictionary "C:\Devel\Tools\ispell\ispell\.ispell")
+(require 'ispell)
+
 
 (defun myFunction()
   ;testifunktio
@@ -77,6 +97,3 @@
   (insert-char 8730))
 
 					;Σ√∊⊆∅
-
-
-  
