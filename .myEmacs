@@ -29,7 +29,6 @@
 (global-set-key (kbd "M-2") 'delete-other-windows)
 (global-set-key (kbd "M-1") 'delete-window)
 
-(global-set-key (kbd "C-f") 'mySearch);;TODO
 (global-set-key (kbd "M-z") 'compile)
 (global-set-key (kbd "M-x") 'execute-extended-command)
 (global-set-key (kbd "C-b") 'switch-to-buffer)
@@ -37,7 +36,7 @@
 (global-set-key (kbd "C-s") ctl-x-map)
 (global-set-key (kbd "C-s a") 'write-file)
 
-;(global-set-key (kbd "C-s s") 'save-buffer)
+;(glo bal-set-key (kbd "C-s s") 'save-buffer)
 ;(global-set-key (kbd "C-s a") 'write-file)
 ;;Custom Emacs
 
@@ -79,6 +78,8 @@
 (global-set-key (kbd "C-a") 'myControlAll)
 ;;;Absolutely necessary
 
+;;TODO tee oma parempi searchi kun osaat
+;; pistä tämä toimimaan: (global-set-key (kbd "C-w") 'isearch-repeat-backward)
 (global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "C-M-f") 'isearch-backward)
 
