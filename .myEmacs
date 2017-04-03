@@ -1,9 +1,21 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (nlinum multiple-cursors intero cl-lib-highlight)))
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Source Code Pro" :foundry "outline" :slant normal :weight normal :height 90 :width normal)))))
+
 ;;When I start using this I have to have loaded:
 ;;cl-lib
 ;;intero
 ;;multiple-cursors
-
-
 
 ;;Be sure that those extra libraries in the beginning can be found
 
@@ -25,15 +37,13 @@
 (require 'multiple-cursors)
 ;;multiple cursors
 
-
-
 ;;poistaa toolbarin käytöstä
 (tool-bar-mode -1)
 ;;hävittää äänikellon kai ehkä
 (setq visible-bell 1)
 ;;maalatuna alueen päälle voi suoraan kirjoittaa
 (delete-selection-mode 1)
-;;Windows keyboard
+;;Windows keyboard 
 
 
 
@@ -49,7 +59,7 @@
   (end-of-buffer nil)
   (setq deactivate-mark nil))
 
-;;testifunktio
+;;testifunktio 
 (defun myFunction()
   (interactive)
   (insert "Hello World!!!"))
@@ -69,6 +79,7 @@
     ;;Hotkeys
     ;;(global-set-key (kbd "M-a") 'backward-char)
     (define-key map (kbd "M-¤") 'split-window-below)
+    (define-key map (kbd "M-4") 'split-window-right)
     (define-key map (kbd "M-2") 'delete-other-windows)
     (define-key map (kbd "M-1") 'delete-window)
 
@@ -152,3 +163,6 @@ Called via the `after-load-functions' special hook."
       (assq-delete-all 'my-keys-minor-mode minor-mode-map-alist)
       (add-to-list 'minor-mode-map-alist mykeys))))
 ;;minor mode omilla nappuloille.
+
+
+
