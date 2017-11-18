@@ -1,0 +1,40 @@
+--Multiple cursors
+
+mc/mark-more-like-this-extended: Use arrow keys to quickly mark/skip next/previous occurances.
+mc/mark-all-like-this
+mc/mark-all-words-like-this
+mc/mark-sgml-tag-pair: Mark the current opening and closing tag.
+mc/insert-numbers: Insert increasing numbers for each cursor, top to bottom.
+mc/sort-regions: Sort the marked regions alphabetically.
+mc/insert-letters: Insert increasing letters for each cursor, top to bottom.
+M-< -> mc/mark-next-like-thi
+M-> -> mc/mark-more-like-this-extended
+M-z -> mc/mark-all-like-this
+~/.emacs.d/.mc-lists.el
+mc/cmds-to-run-once
+
+C-v center cursor
+M-v center cursor
+C-' hide/unhide cursorless
+
+
+er/expand-region?
+
+M-n   -> hide show hs-minor-mode
+M-C-n -> hide all hs-minor-mode
+M-C-m -> show all hs-minor-mode
+
+
+c-x i    ->  insert a file to this file
+c-x c-v  ->  replace this file with
+
+M-x shell -> shell
+C-x r SPC -> save value of point in register
+C-x r j -> jump to point saved in register
+
+C-s -> search forward
+C-r -> search backward
+
+not working?
+C-M-s -> regular expression search
+C-M-r -> reverse regular expression search
