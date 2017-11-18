@@ -1,3 +1,10 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -22,12 +29,7 @@
 
 ;;Be sure that those extra libraries in the beginning can be found
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://stable.melpa.org/packages/")))
 
-(require 'package)
-(package-initialize)
 
 (load-theme 'wheatgrass t)
 
@@ -72,11 +74,7 @@
   (package-install 'indium))
 ;; indium
 
-;; intero
-(unless (package-installed-p 'intero)
-  (package-install 'intero))
-(add-hook 'haskell-mode-hook 'intero-mode)
-;; intero
+
 
 ;;multiple cursors
 (require 'multiple-cursors)
@@ -133,7 +131,6 @@
     (define-key map (kbd "M-2") 'delete-other-windows)
     (define-key map (kbd "M-1") 'delete-window)
 
-    (define-key map (kbd "M-z") 'compile)
     (define-key map (kbd "M-x") 'execute-extended-command)
     (define-key map (kbd "C-b") 'switch-to-buffer)
     (define-key map (kbd "C-o") 'find-file)
@@ -191,6 +188,7 @@
     ;;Multiple Cursor
     (define-key map (kbd "M-<") 'mc/mark-next-like-this)
     (define-key map (kbd "M->") 'mc/mark-more-like-this-extended)
+    (define-key map (kbd "M-z") 'mc/mark-all-like-this)
     ;;Multiple Cursor)
     map)
   "My own key map")
@@ -216,3 +214,9 @@ Called via the `after-load-functions' special hook."
 ;;minor mode omilla nappuloille.
 
 
+;;hide show
+(add-hook 'LaTeX-mode-hook
+          (local-set-key (kbd "M-n") 'hs-toggle-hiding)
+	    (local-set-key (kbd "C-M-n") 'hs-hide-all)
+	    (local-set-key (kbd "C-M-m") 'hs-show-all))
+;;hide show
