@@ -1,8 +1,6 @@
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+
+(require 'package)
 (package-initialize)
 
 (custom-set-variables
@@ -10,6 +8,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(elpy-syntax-check-command
+   "C:\\Users\\EskoJ\\AppData\\Roaming\\Python\\Python36\\Scripts/flake8.exe")
  '(package-selected-packages
    (quote
     (## company-tern ag xref-js2 js2-refactor js2-mode indium nlinum multiple-cursors intero cl-lib-highlight)))
@@ -21,6 +21,15 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Source Code Pro" :foundry "outline" :slant normal :weight normal :height 90 :width normal)))))
 
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+			 ("melpa" . "http://stable.melpa.org/packages/")))
+(add-to-list 'package-archives
+             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+
+(require 'package)
+(package-initialize)
+
 ;;When I start using this I have to have loaded:
 ;;cl-lib
 ;;intero
@@ -29,9 +38,33 @@
 
 ;;Be sure that those extra libraries in the beginning can be found
 
+(setq inhibit-startup-message t) ;; hide the startup message
+(load-theme 'wheatgrass t) ;; color to be right
+(global-linum-mode t) ;; enable line numbers globally
+;;(visual-line-fringe-indicators t) ;; indicators for multi line sentences EITOIMI
+;;(visual-line-mode t) ;; word based text wrapping EITOIMI
+(setq show-paren-delay 0) ;; no delay on showing pairing parenthesis
+(show-paren-mode t) ;; show pairing parenthesis
+(tool-bar-mode -1) ;; poistaa toolbarin käytöstä
+(setq visible-bell 1) ;; hävittää äänikellon kai ehkä
+(delete-selection-mode 1) ;; maalattuna alueen päälle voi suoraan kirjoittaa
+
+;;elpy
+;;DOESNT WORK ON WINDOWS
+;;(defvar myPackages
+;;  '(someones-opinion
+;;    elpy ;; add the elpy package
+;;    flycheck
+;;    py-autopep8))
+;;
+;;(elpy-enable)
+;;
+;;(require 'py-autopep8)
+;;(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+;;
+;;elpy
 
 
-(load-theme 'wheatgrass t)
 
 ;;js2-mode
 (require 'js2-mode)
@@ -79,14 +112,6 @@
 ;;multiple cursors
 (require 'multiple-cursors)
 ;;multiple cursors
-
-;;poistaa toolbarin käytöstä
-(tool-bar-mode -1)
-;;hävittää äänikellon kai ehkä
-(setq visible-bell 1)
-;;maalatuna alueen päälle voi suoraan kirjoittaa
-(delete-selection-mode 1)
-;;Windows keyboard 
 
 
 
@@ -216,7 +241,7 @@ Called via the `after-load-functions' special hook."
 
 ;;hide show
 (add-hook 'LaTeX-mode-hook
-          (local-set-key (kbd "M-n") 'hs-toggle-hiding)
-	    (local-set-key (kbd "C-M-n") 'hs-hide-all)
-	    (local-set-key (kbd "C-M-m") 'hs-show-all))
+          (local-set-key (kbd "C-r") 'hs-toggle-hiding)
+	    (local-set-key (kbd "C-S-r") 'hs-hide-all)
+	    (local-set-key (kbd "C-M-r") 'hs-show-all))
 ;;hide show
