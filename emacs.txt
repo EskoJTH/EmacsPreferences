@@ -20,9 +20,9 @@ C-' hide/unhide cursorless
 
 er/expand-region?
 
-M-n   -> hide show hs-minor-mode
-M-C-n -> hide all hs-minor-mode
-M-C-m -> show all hs-minor-mode
+C-r   -> hide/show hs-minor-mode
+C-S-r -> hide all hs-minor-mode
+C-M-r -> show all hs-minor-mode
 
 
 c-x i    ->  insert a file to this file
