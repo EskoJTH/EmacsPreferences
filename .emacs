@@ -30,6 +30,14 @@
 (package-install 'intero)
 (add-hook 'haskell-mode-hook 'intero-mode)
 
+;; Ctrl-a
+(defun myControlAll()
+  (interactive)
+  (beginning-of-buffer nil)
+  (set-mark-command nil)
+  (end-of-buffer nil)
+  (setq deactivate-mark nil))
+
 ;;testifunktio
 (defun drawmeaepsilon()
   (interactive)
