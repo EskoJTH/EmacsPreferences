@@ -22,16 +22,19 @@ er/expand-region?
 
 C-r   -> hide/show hs-minor-mode
 C-S-r -> hide all hs-minor-mode
-C-M-r -> show all hs-minor-mode
+C-S-t -> show all hs-minor-mode
 
 
 c-x i    ->  insert a file to this file
 c-x c-v  ->  replace this file with
 
 M-x shell -> shell
+M-x ansi-term- -> better shell
+M-x eshell -> even better shell
 C-x r SPC -> save value of point in register
 C-x r j -> jump to point saved in register
 
+C-f -> Search first forward
 C-s -> search forward
 C-r -> search backward
 
