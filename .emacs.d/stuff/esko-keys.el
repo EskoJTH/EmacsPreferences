@@ -1,3 +1,10 @@
+(defun myControlAll()
+  (interactive)
+  (beginning-of-buffer nil)
+  (set-mark-command nil)
+  (end-of-buffer nil)
+(setq deactivate-mark nil))
+
 ;;minor mode omilla nappuloille.
 (defvar my-keys-minor-mode-map
   (let ((map (make-sparse-keymap)))
@@ -43,9 +50,13 @@
     (define-key map (kbd "M-q") 'move-beginning-of-line)
     (define-key map (kbd "M-e") 'move-end-of-line)
 
+    (define-key map (kbd "M-u") 'move-beginning-of-line)
+    (define-key map (kbd "M-o") 'move-end-of-line)
+
     (define-key map (kbd "M-C-c") 'backward-kill-word)
     (define-key map (kbd "M-c") 'delete-backward-char)
     (define-key map (kbd "M-v") 'delete-char)
+    (define-key map (kbd "M-C-v") 'forward-kill-word)
     ;;Custom keyboard
     
     ;;Windows keyboard
@@ -58,8 +69,7 @@
     (define-key map (kbd "C-a") 'myControlAll)
 ;;;Absolutely necessary
     
-    ;;TODO tee oma parempi searchi kun osaat
-    ;; pistÃ¤ tÃ¤mÃ¤ toimimaan: (global-set-key (kbd "C-w") 'isearch-repeat-backward)
+    ;; i-search
     (define-key map (kbd "C-f") 'isearch-forward)
     (define-key map (kbd "C-M-f") 'isearch-backward)
 
@@ -68,6 +78,13 @@
     (define-key map (kbd "M->") 'mc/mark-more-like-this-extended)
     (define-key map (kbd "M-z") 'mc/mark-all-like-this)
     ;;Multiple Cursor)
+
+    ;;hs hotkeys
+    (define-key map  (kbd "C-r") 'hs-toggle-hiding)
+    (define-key map (kbd "C-S-t") 'hs-show-all)
+    (define-key map (kbd "C-S-r") 'hs-hide-all)
+    ;;hs hotkeys
+    
     map)
   "My own key map")
     
@@ -90,3 +107,6 @@ Called via the `after-load-functions' special hook."
       (assq-delete-all 'my-keys-minor-mode minor-mode-map-alist)
       (add-to-list 'minor-mode-map-alist mykeys))))
 ;;minor mode omilla nappuloille.
+
+
+
