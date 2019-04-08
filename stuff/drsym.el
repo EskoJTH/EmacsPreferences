@@ -1,4 +1,4 @@
-;; symbols and stuff. Ny brain is ded.
+;; Allows adding new symbols or strings and calling them later with a command. Saves the symbols over sessions.
 
 ;; Saving enabled in this file!
 ;; save location is ~/.emacs.d/drsymfile
