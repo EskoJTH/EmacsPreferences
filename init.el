@@ -16,6 +16,7 @@
 
 ;;multiple cursors
 (package-install 'multiple-cursors)
+(package-initialize)
 (require 'multiple-cursors)
 
 
@@ -33,9 +34,9 @@
 (load "esko-font.el")
 
 
-(package-install 'syntax-subword)
-(require 'syntax-subword)
-(global-syntax-subword-mode)
+;;(package-install 'syntax-subword)
+;;(require 'syntax-subword)
+;;(global-syntax-subword-mode)
 
 ;;(setq tramp-verbose 9)
 ;;(prefer-coding-system 'utf-8-unix)
