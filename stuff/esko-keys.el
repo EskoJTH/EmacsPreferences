@@ -25,10 +25,24 @@ the current position of point, then move it to the beginning of the line."
 ;    (end-of-buffer nil)
 ;    (setq deactivate-mark nil))
 
+
+(defun frame-bck()
+  (interactive)
+  (other-window-or-frame -1)
+)
+
+(define-key (current-global-map) (kbd "M-j") 'other-window)
+(define-key (current-global-map) (kbd "M-O") 'frame-bck)
+
 ;;minor mode omilla nappuloille.
 (defvar my-keys-minor-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "C-a") 'smart-line-beginning)
+
+    (define-key map (kbd "M-z") 'highlight-symbol)
+    (define-key (current-global-map) (kbd "M-n") 'other-window)
+    (define-key (current-global-map) (kbd "M-p") 'frame-bck)
+    
     
     ;;Hotkeys
     ;;(global-set-key (kbd "M-a") 'backward-char)
@@ -36,6 +50,7 @@ the current position of point, then move it to the beginning of the line."
     (define-key map (kbd "M-3") 'split-window-below)
     (define-key map (kbd "M-2") 'delete-other-windows)
     (define-key map (kbd "M-1") 'delete-window)
+    
 
     (define-key map (kbd "C-ö") 'delete-backward-char)
     (define-key map (kbd "M-ö") 'backward-kill-word)
@@ -106,7 +121,7 @@ the current position of point, then move it to the beginning of the line."
     ;;Multiple Cursor
     (define-key map (kbd "M-q") 'mc/mark-next-like-this)
     (define-key map (kbd "M-Q") 'mc/mark-more-like-this-extended)
-    (define-key map (kbd "M-z") 'mc/mark-all-like-this)
+    ;;(define-key map (kbd "M-z") 'mc/mark-all-like-this)
     ;;Multiple Cursor)
 
     ;;Magit

@@ -149,6 +149,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(highlight-symbol-colors
+   (quote
+    ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
+ '(highlight-symbol-foreground-color "cyan")
  '(package-selected-packages
    (quote
-    (dumb-jump syntax-subword magit cider ## rainbow-delimiters multiple-cursors))))
+    (highlight-symbol dumb-jump syntax-subword magit cider ## rainbow-delimiters multiple-cursors))))
