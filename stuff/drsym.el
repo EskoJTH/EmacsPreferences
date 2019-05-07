@@ -16,7 +16,7 @@
 (defun drsymTestHashMap ()
   "A test version of the hashmap used.
 Can be saved to file by running drsym-add and then loaded in next session with drsym-load."
-  (setq drsymlist #s(hash-table
+   (setq drsymlist #s(hash-table
 		     test equal
 		     data ("lambdaL" "λ" "sizgmaU" "Σ" "gammaU" "Γ" "gammaL" "γ" "delatU" "Δ" "deltaL" "δ" "lamdaU" "Λ" "pii" "π" "rho" "ρ" "phiU" "Φ" "phiL" "φ" "epsilonL" "ε" "psiU" "Ψ" "psiL" "ψ" "omegaU" "Ω" "omegaL" "ω" "sigmaL" "σ" "thetaU" "Θ" "thetaL" "θ" "alpha" "α" "beta" "β" "idk" "¯\\_(ツ)_/¯" "dunno" "¯\\(°_o)/¯" "sqrt" "√" "integral" "∫" "therefore" "∴" "because" "∵" "neg" "¬" "square" "■" "inference" "⊢" "dot" "•" "forall" "∀" "exists" "∃" "in" "∈" "notin" "∉" "inR" "∋" "notinR" "∌" "pallo" "∘" "circle" "○" "emptyset" "∅" "union" "∪" "intersection" "∩" "lor" "∨" "land" "∧" "cartesian" "×" "lightning" "↯" "box" "□" "subset" "⊂" "subsetEq" "⊆" "subsetR" "⊃" "subsetEqR" "⊇" "infinity" "∞")
 		     )))

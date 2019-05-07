@@ -33,6 +33,8 @@
 ;; Font settings
 (load "esko-font.el")
 
+(load "drsym.el")
+(drsym-load)
 
 ;;(package-install 'syntax-subword)
 ;;(require 'syntax-subword)
@@ -78,33 +80,33 @@
 ;;(add-hook 'haskell-mode-hook 'intero-mode)
 
 
-(defun drawmea-epsilon()
-  (interactive)
-  (insert "ε"))
+;; (defun drawmea-epsilon()
+;;   (interactive)
+;;   (insert "ε"))
 
-(defun drawmea-lambda()
-  (interactive)
-  (insert "λ"))
+;; (defun drawmea-lambda()
+;;   (interactive)
+;;   (insert "λ"))
 
-(defun drawmea-s-zigma()
-  (interactive)
-  (insert "σ"))
+;; (defun drawmea-s-zigma()
+;;   (interactive)
+;;   (insert "σ"))
 
-(defun drawmea-bottom()
-  (interactive)
-  (insert "⊥"))
+;; (defun drawmea-bottom()
+;;   (interactive)
+;;   (insert "⊥"))
 
-(defun drawmea-empty()
-  (interactive)
-  (insert "∅"))
+;; (defun drawmea-empty()
+;;   (interactive)
+;;   (insert "∅"))
 
-(defun drawmea-alpha()
-  (interactive)
-  (insert "α"))
+;; (defun drawmea-alpha()
+;;   (interactive)
+;;   (insert "α"))
 
-(defun drawmea-beeta()
-  (interactive)
-  (insert "β"))
+;; (defun drawmea-beeta()
+;;   (interactive)
+;;   (insert "β"))
 
 ;;hide show
 ;;(add-hook 'hs-minor-mode 'setHSkeys())
