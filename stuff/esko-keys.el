@@ -28,7 +28,7 @@ the current position of point, then move it to the beginning of the line."
 
 (defun frame-bck()
   (interactive)
-  (other-window-or-frame -1)
+  (other-window -1)
 )
 
 (define-key (current-global-map) (kbd "M-j") 'other-window)
@@ -42,7 +42,9 @@ the current position of point, then move it to the beginning of the line."
     (define-key map (kbd "M-z") 'highlight-symbol)
     (define-key (current-global-map) (kbd "M-n") 'other-window)
     (define-key (current-global-map) (kbd "M-p") 'frame-bck)
-    
+
+    (define-key (current-global-map) (kbd "C-å") 'sr-speedbar-toggle)
+    (define-key (current-global-map) (kbd "M-å") 'magit-status)
     
     ;;Hotkeys
     ;;(global-set-key (kbd "M-a") 'backward-char)

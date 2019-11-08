@@ -1,3 +1,5 @@
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil))) ;; scroll amount
+
 (menu-bar-mode -1);; Turn off the menu bar at the top
 (setq-default frame-title-format "%b (%f)") ;; full path in title bar
 (setq create-lockfiles nil) ;; No need for ~ files when editing
@@ -17,6 +19,9 @@
 (global-hl-line-mode 1)
 (set-face-foreground 'highlight nil)
 (set-face-background hl-line-face "gray10")
+
+(setq isearch-allow-scroll  t)
+(setq hlt-auto-faces-flag t)
 
 
 ;; Don't show native OS scroll bars for buffers because they're redundant
@@ -52,7 +57,6 @@
 
 ;; Includes buffer names of recently open files, even if they're not
 ;; open now
-
 
 ;; Shows a list of buffers
 ;;(global-set-key (kbd "C-x C-b") 'ibuffer)

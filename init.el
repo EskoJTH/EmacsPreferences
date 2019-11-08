@@ -1,5 +1,7 @@
 (setq use-dialog-box nil)
 
+
+
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("melpa" . "http://melpa.org/packages/")))
 ;(add-to-list 'package-archives
@@ -11,6 +13,8 @@
 ;;(set-selection-coding-system 'utf-8)
 ;;(set-language-environment "UTF-8")
 
+;;(server-start)
+
 (require 'package)
 (package-initialize)
 
@@ -18,8 +22,14 @@
 (package-install 'multiple-cursors)
 (package-initialize)
 (require 'multiple-cursors)
+;;(list-colors-display)
 
+(require 'cc-mode)
 
+(set-background-color "#170920")
+
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;;where custom elisp files are
 (add-to-list 'load-path "~/.emacs.d/stuff")
@@ -27,11 +37,17 @@
 ;; my own key setup always on top
 (load "esko-keys.el")
 
+;; Quick and so dirty hacks
+(load "esko-hacks.el")
+
 ;; My common settings
 (load "esko-config.el")
 
 ;; Font settings
 (load "esko-font.el")
+
+;; Font settings
+(load "esko-c.el")
 
 (load "drsym.el")
 (drsym-load)
@@ -137,6 +153,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-button-mouse ((t (:background "DarkOrchid2" :foreground "black" :box (:line-width 2 :style released-button)))))
+ '(custom-button-pressed ((t (:background "magenta" :foreground "DarkOrchid4" :box (:line-width 2 :style pressed-button)))))
+ '(mode-line ((t (:background "SlateBlue4" :foreground "cyan" :box (:line-width -1 :style released-button)))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#54F"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#90F"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#0BF"))))
@@ -145,17 +164,27 @@
  '(rainbow-delimiters-depth-6-face ((t (:foreground "#F80"))))
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#0Fa"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "yellow3"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "purple3")))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "purple3"))))
+ '(region ((t (:background "#402050" :foreground "#e0f0ff")))))
+
+(set-face-attribute 'default nil :height 120)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-clang-executable "/usr/bin/clang-8")
  '(highlight-symbol-colors
    (quote
     ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
  '(highlight-symbol-foreground-color "cyan")
  '(package-selected-packages
    (quote
-    (highlight-symbol dumb-jump syntax-subword magit cider ## rainbow-delimiters multiple-cursors))))
+    (gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar helm function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
+ '(safe-local-variable-values
+   (quote
+    ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
+
+
+(set-background-color "#170920")
