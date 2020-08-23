@@ -26,6 +26,15 @@
       ;; 	     (next-line)))
 
 
+
+
+
+(defun runStuff ()
+  (interactive)
+  (shell-command "cd /home/esko/demo/lmad1_workshop_Instanssi2020/eskoDemo && make example.debug.html && firefox example.debug.html")
+  )
+    
+
 ;; (defun type-to-begin ()
 ;;   (interactive)
 ;;   (intero-type-at "INSERT")

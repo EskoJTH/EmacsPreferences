@@ -38,12 +38,13 @@ the current position of point, then move it to the beginning of the line."
 (defvar my-keys-minor-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "C-a") 'smart-line-beginning)
+    (define-key map (kbd "C-r") 'kmacro-end-or-call-macro)
 
     (define-key map (kbd "M-z") 'highlight-symbol)
     (define-key (current-global-map) (kbd "M-n") 'other-window)
     (define-key (current-global-map) (kbd "M-p") 'frame-bck)
 
-    (define-key (current-global-map) (kbd "C-å") 'sr-speedbar-toggle)
+    (define-key (current-global-map) (kbd "C-å") 'runStuff)
     (define-key (current-global-map) (kbd "M-å") 'magit-status)
     
     ;;Hotkeys
@@ -58,6 +59,7 @@ the current position of point, then move it to the beginning of the line."
     (define-key map (kbd "M-ö") 'backward-kill-word)
     
     (define-key map (kbd "C-x f") 'find-file)
+    (define-key map (kbd "C-x s") 'save-buffer)
 
 ;    (define-key map (kbd "M-x") 'execute-extended-command)
 ;    (define-key map (kbd "C-b") 'switch-to-buffer)
@@ -134,9 +136,9 @@ the current position of point, then move it to the beginning of the line."
     ;;Magit
 
     ;;hs hotkeys
-    (define-key map  (kbd "C-r") 'hs-toggle-hiding)
-    (define-key map (kbd "C-S-t") 'hs-show-all)
-    (define-key map (kbd "C-S-r") 'hs-hide-all)
+    (define-key map  (kbd "M-t") 'hs-toggle-hiding)
+    (define-key map (kbd "C-M-t") 'hs-show-all)
+    (define-key map (kbd "C-M-r") 'hs-hide-all)
     ;;hs hotkeys
     
     map)

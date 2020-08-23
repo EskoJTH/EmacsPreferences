@@ -1,3 +1,5 @@
+(find-file "/home/esko/muistio.txt")
+
 (setq use-dialog-box nil)
 
 
@@ -15,14 +17,23 @@
 
 ;;(server-start)
 
+;; (require 'calfw)
+;; (require 'calfw-ical)
+;; (cfw:open-ical-calendar "https://calendar.google.com/calendar/ical/esekkiiii%40gmail.com/public/basic.ics")
+
 (require 'package)
 (package-initialize)
+
+(require 'lsp)
+(require 'lsp-haskell)
+(add-hook 'haskell-mode-hook #'lsp)
 
 ;;multiple cursors
 (package-install 'multiple-cursors)
 (package-initialize)
 (require 'multiple-cursors)
 ;;(list-colors-display)
+
 
 (require 'cc-mode)
 
@@ -33,6 +44,8 @@
 
 ;;where custom elisp files are
 (add-to-list 'load-path "~/.emacs.d/stuff")
+
+(load "esko-scala.el")
 
 ;; my own key setup always on top
 (load "esko-keys.el")
@@ -181,7 +194,7 @@
  '(highlight-symbol-foreground-color "cyan")
  '(package-selected-packages
    (quote
-    (gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar helm function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
+    (cider lsp-haskell lsp-ui rjsx-mode scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar helm function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
  '(safe-local-variable-values
    (quote
     ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))

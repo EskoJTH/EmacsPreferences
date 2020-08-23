@@ -1,5 +1,7 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil))) ;; scroll amount
 
+(global-auto-revert-mode t)
+
 (menu-bar-mode -1);; Turn off the menu bar at the top
 (setq-default frame-title-format "%b (%f)") ;; full path in title bar
 (setq create-lockfiles nil) ;; No need for ~ files when editing
@@ -14,6 +16,7 @@
 
 ;;quickert tips
 (setq tooltip-delay 0.2)
+(setq tooltip-hide-delay 3000)
 
 ;; Highlight current line
 (global-hl-line-mode 1)
