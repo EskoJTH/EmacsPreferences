@@ -1,5 +1,3 @@
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil))) ;; scroll amount
-
 (global-auto-revert-mode t)
 
 (menu-bar-mode -1);; Turn off the menu bar at the top
@@ -51,6 +49,8 @@
 (ido-mode t)
 ;;(ido-vertical-mode nil)
 ;;(setq ido-use-virtual-buffers nil)
+
+(define-key (cdr ido-minor-mode-map-entry) [remap write-file] nil)
 
 (setq ido-auto-merge-work-directories-length -1)
 ;;dont't jump to some other directory when I mistype a filename
