@@ -1,4 +1,6 @@
-(find-file "/home/esko/muistio.txt")
+
+
+(find-file "/home/esko/orkki.org")
 
 (setq use-dialog-box nil)
 
@@ -24,9 +26,9 @@
 (require 'package)
 (package-initialize)
 
-(require 'lsp)
-(require 'lsp-haskell)
-(add-hook 'haskell-mode-hook #'lsp)
+;; (require 'lsp)
+;; (require 'lsp-haskell)
+;; (add-hook 'haskell-mode-hook #'lsp)
 
 ;;multiple cursors
 (package-install 'multiple-cursors)
@@ -37,7 +39,6 @@
 
 (require 'cc-mode)
 
-(set-background-color "#170920")
 
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
@@ -46,6 +47,8 @@
 (add-to-list 'load-path "~/.emacs.d/stuff")
 
 (load "esko-scala.el")
+
+(load "ob-http/ob-http.el")
 
 ;; my own key setup always on top
 (load "esko-keys.el")
@@ -192,12 +195,37 @@
    (quote
     ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
  '(highlight-symbol-foreground-color "cyan")
+ '(org-babel-load-languages
+   (quote
+    ((shell . t)
+     (emacs-lisp . t)
+     (haskell . t)
+     (http . t))))
+ '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (cider lsp-haskell lsp-ui rjsx-mode scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar helm function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
+    (company-lsp yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar helm function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
  '(safe-local-variable-values
    (quote
     ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
 
 
 (set-background-color "#170920")
+
+
+;; (require 'sublimity)
+;; (require 'sublimity-scroll)
+;; (sublimity-mode 1)
+
+;; (setq sublimity-scroll-weight 1
+;;       sublimity-scroll-drift-length 1)
+
+
+
+
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (haskell . t)
+   (http . t)))
