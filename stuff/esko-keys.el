@@ -1,4 +1,6 @@
-
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
 
 (defun beginning-of-line-or-indentation ()
   "move to beginning of line, or indentation"
@@ -38,7 +40,9 @@ the current position of point, then move it to the beginning of the line."
 (defvar my-keys-minor-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "C-a") 'smart-line-beginning)
-    (define-key map (kbd "C-r") 'kmacro-end-or-call-macro)
+    ;;(define-key map (kbd "C-r") 'kmacro-end-or-call-macro)
+    ;;(define-key map (kbd "C-x C-b") 'ido-switch-buffer)
+    
 
     (define-key map (kbd "M-z") 'highlight-symbol)
     (define-key (current-global-map) (kbd "M-n") 'other-window)

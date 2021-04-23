@@ -1,3 +1,4 @@
+
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil))) ;; scroll amount
 (setq mouse-wheel-progressive-speed t) ;;nil)
 (setq jit-lock-defer-time 0.15)
@@ -53,6 +54,8 @@
 (ido-mode t)
 ;;(ido-vertical-mode nil)
 ;;(setq ido-use-virtual-buffers nil)
+
+(define-key (cdr ido-minor-mode-map-entry) [remap write-file] nil)
 
 (setq ido-auto-merge-work-directories-length -1)
 ;;dont't jump to some other directory when I mistype a filename

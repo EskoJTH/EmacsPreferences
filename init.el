@@ -1,13 +1,93 @@
 
-
 (find-file "/home/esko/orkki.org")
 
 (setq use-dialog-box nil)
-
-
-
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("melpa" . "http://melpa.org/packages/")))
+
+
+(require 'package)
+(package-initialize)
+
+
+;(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+; '(cider-eldoc-display-context-dependent-info t)
+; '(cider-font-lock-dynamically (quote (macro function var deprecated core)))
+; '(cider-overlays-use-font-lock nil)
+; '(cider-result-use-clojure-font-lock t)
+; '(minimap-highlight-line nil)
+; '(minimap-minimum-width 20)
+; '(minimap-mode t)
+; '(minimap-tag-only nil)
+; '(minimap-update-delay 0)
+; '(minimap-window-location (quote right))
+; '(package-selected-packages (quote (cider rainbow-delimiters intero multiple-cursors))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-button-mouse ((t (:background "DarkOrchid2" :foreground "black" :box (:line-width 2 :style released-button)))))
+ '(custom-button-pressed ((t (:background "magenta" :foreground "DarkOrchid4" :box (:line-width 2 :style pressed-button)))))
+ '(mode-line ((t (:background "SlateBlue4" :foreground "cyan" :box (:line-width -1 :style released-button)))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#54F"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "#90F"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#0BF"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#FF3"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#F4F"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#F80"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#0Fa"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "yellow3"))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "purple3"))))
+ '(region ((t (:background "#402050" :foreground "#e0f0ff")))))
+
+
+(set-face-attribute 'default nil :height 120)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-clang-executable "/usr/bin/clang-8")
+ '(highlight-symbol-colors
+   (quote
+    ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
+ '(highlight-symbol-foreground-color "cyan")
+ '(org-babel-load-languages
+   (quote
+    ((shell . t)
+     (emacs-lisp . t)
+     (haskell . t)
+     (http . t))))
+ '(org-confirm-babel-evaluate nil)
+ '(package-selected-packages
+   (quote
+    (counsel swiper ivy company-lsp yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
+ '(safe-local-variable-values
+   (quote
+    ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
+
+
+
+
+
+;; (setq lsp-haskell-process-path-hie "hie-wrapper")
+
+(setq vc-follow-symlinks t)
+
+(find-file "/home/esko/orkki.org")
+
+;; (use-package eglot
+;;   :ensure t
+;;   :config
+;;   (add-to-list 'eglot-server-programs '(haskell-mode . ("ghcide" "--lsp"))))
+
+
 ;(add-to-list 'package-archives
 ;             '("elpy" . "http://jorgenschaefer.github.io/packages/"))
 
@@ -23,11 +103,11 @@
 ;; (require 'calfw-ical)
 ;; (cfw:open-ical-calendar "https://calendar.google.com/calendar/ical/esekkiiii%40gmail.com/public/basic.ics")
 
-(require 'package)
-(package-initialize)
 
+;; One of these I quess for haskell
 ;; (require 'lsp)
 ;; (require 'lsp-haskell)
+;; OR
 ;; (add-hook 'haskell-mode-hook #'lsp)
 
 ;;multiple cursors
@@ -37,7 +117,8 @@
 ;;(list-colors-display)
 
 
-(require 'cc-mode)
+;;(require 'cc-mode)
+
 
 
 (require 'company)
@@ -46,7 +127,7 @@
 ;;where custom elisp files are
 (add-to-list 'load-path "~/.emacs.d/stuff")
 
-(load "esko-scala.el")
+
 
 (load "ob-http/ob-http.el")
 
@@ -62,11 +143,23 @@
 ;; Font settings
 (load "esko-font.el")
 
-;; Font settings
+;; c settings
 (load "esko-c.el")
+
+;; general navigation settings .ie ivy
+(load "esko-navigation.el")
+
 
 (load "drsym.el")
 (drsym-load)
+
+(load "esko-scala.el")
+
+;; this shit does not work at all???
+;; (load "esko-lsp.el")
+
+
+
 
 ;;(package-install 'syntax-subword)
 ;;(require 'syntax-subword)
@@ -148,66 +241,21 @@
 ;	  (local-set-key (kbd "C-M-r") 'drawmeaepsilon)
 	  (global-set-key (kbd "C-S-r") 'hs-hide-all))
 
-;(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-; '(cider-eldoc-display-context-dependent-info t)
-; '(cider-font-lock-dynamically (quote (macro function var deprecated core)))
-; '(cider-overlays-use-font-lock nil)
-; '(cider-result-use-clojure-font-lock t)
-; '(minimap-highlight-line nil)
-; '(minimap-minimum-width 20)
-; '(minimap-mode t)
-; '(minimap-tag-only nil)
-; '(minimap-update-delay 0)
-; '(minimap-window-location (quote right))
-; '(package-selected-packages (quote (cider rainbow-delimiters intero multiple-cursors))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-button-mouse ((t (:background "DarkOrchid2" :foreground "black" :box (:line-width 2 :style released-button)))))
- '(custom-button-pressed ((t (:background "magenta" :foreground "DarkOrchid4" :box (:line-width 2 :style pressed-button)))))
- '(mode-line ((t (:background "SlateBlue4" :foreground "cyan" :box (:line-width -1 :style released-button)))))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "#54F"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "#90F"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "#0BF"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#FF3"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "#F4F"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "#F80"))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "#0Fa"))))
- '(rainbow-delimiters-depth-8-face ((t (:foreground "yellow3"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "purple3"))))
- '(region ((t (:background "#402050" :foreground "#e0f0ff")))))
+   ;; (progn
+   ;;  (mapc
+   ;;   (lambda (x) (add-to-list 'face-remapping-alist x))
+   ;;   '((agda2-highlight-datatype-face              . font-lock-type-face)
+   ;;     (agda2-highlight-function-face              . font-lock-type-face)
+   ;;     (agda2-highlight-inductive-constructor-face . font-lock-function-name-face)
+   ;;     (agda2-highlight-keyword-face               . font-lock-keyword-face)
+   ;;     (agda2-highlight-module-face                . font-lock-constant-face)
+   ;;     (agda2-highlight-number-face                . nil)
+   ;;     (agda2-highlight-postulate-face             . font-lock-type-face)
+   ;;     (agda2-highlight-primitive-type-face        . font-lock-type-face)
+   ;;     (agda2-highlight-record-face                . font-lock-type-face))))
 
-(set-face-attribute 'default nil :height 120)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-clang-executable "/usr/bin/clang-8")
- '(highlight-symbol-colors
-   (quote
-    ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
- '(highlight-symbol-foreground-color "cyan")
- '(org-babel-load-languages
-   (quote
-    ((shell . t)
-     (emacs-lisp . t)
-     (haskell . t)
-     (http . t))))
- '(org-confirm-babel-evaluate nil)
- '(package-selected-packages
-   (quote
-    (company-lsp yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar helm function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
- '(safe-local-variable-values
-   (quote
-    ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
+
 
 
 (set-background-color "#170920")
@@ -219,8 +267,6 @@
 
 ;; (setq sublimity-scroll-weight 1
 ;;       sublimity-scroll-drift-length 1)
-
-
 
 
 
