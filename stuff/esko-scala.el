@@ -76,10 +76,10 @@
 ;; (use-package yasnippet)
 
 
-;; Add company-lsp backend for metals.
+;; Add company-lsp backend for metals. company-lsp does not exist remove.
 ;;   (depending on your lsp-mode version it may be outdated see:
 ;;    https://github.com/emacs-lsp/lsp-mode/pull/1983)
-(use-package company-lsp)
+;; (use-package company-lsp)
 
 ;; Use the Debug Adapter Protocol for running tests and debugging
 ;; (use-package posframe
