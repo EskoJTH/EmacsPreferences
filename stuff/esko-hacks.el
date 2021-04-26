@@ -26,6 +26,24 @@
 ;; (global-set-key (kbd "C-c V") 'ivy-pop-view)
 
 
+
+(defun my-babel-to-buffer ()
+  "A function to efficiently feed babel code block result to a separate buffer"
+  (interactive)
+  (org-open-at-point)
+  (org-babel-remove-result)
+  
+)
+
+(defun my-org-mode-config ()
+  "To use with `org-mode-hook'"
+  (local-set-key (kbd "C-c h") 'my-babel-to-buffer)
+)
+
+(add-hook 'org-mode-hook 'my-org-mode-config)
+
+
+
 (defun asd ()
   (interactive)
   (intero-type-at "INSERT"))

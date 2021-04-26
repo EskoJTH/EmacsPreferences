@@ -1,3 +1,6 @@
+
+(find-file "/home/esko/orkki.org")
+
 (setq use-dialog-box nil)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 			 ("melpa" . "http://melpa.org/packages/")))
@@ -50,27 +53,31 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(c-basic-offset 4)
  '(company-clang-executable "/usr/bin/clang-8")
  '(highlight-symbol-colors
    (quote
     ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
  '(highlight-symbol-foreground-color "cyan")
- '(history-delete-duplicates t)
- '(indent-tabs-mode nil)
- '(ivy-extra-directories nil)
- '(ivy-height 25)
- '(ivy-wrap t)
- '(lsp-keymap-prefix "m-sl")
- '(org-babel-load-languages (quote ((python . t) (shell . t) (emacs-lisp . t))))
+ ;; '(history-delete-duplicates t)
+ ;; '(indent-tabs-mode nil)
+ ;; '(ivy-extra-directories nil)
+ ;; '(ivy-height 25)
+ ;; '(ivy-wrap t)
+ ;; '(lsp-keymap-prefix "m-sl")
+ '(org-babel-load-languages
+   (quote
+    ((python . t)
+     (shell . t)
+     (emacs-lisp . t)
+     (haskell . t)
+     (http . t))))
+ '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key helm-xref dap-mode)))
+    (lsp-mode  lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key helm-xref dap-mode counsel swiper ivy company-lsp yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
  '(safe-local-variable-values
    (quote
-    ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/"))))
- '(tab-width 4)
- '(vc-follow-symlinks t))
+    ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
 
 
 
@@ -82,7 +89,6 @@
 
 (find-file "/home/esko/orkki.org")
 (find-file "/home/esko/Arkki/arkki.org")
-
 
 ;; (use-package eglot
 ;;   :ensure t
@@ -106,6 +112,10 @@
 ;; (cfw:open-ical-calendar "https://calendar.google.com/calendar/ical/esekkiiii%40gmail.com/public/basic.ics")
 
 
+;; One of these I quess for haskell
+;; (require 'lsp)
+;; (require 'lsp-haskell)
+;; OR
 ;; (add-hook 'haskell-mode-hook #'lsp)
 
 ;;multiple cursors
@@ -126,6 +136,8 @@
 (add-to-list 'load-path "~/.emacs.d/stuff")
 
 
+
+(load "ob-http/ob-http.el")
 
 ;; my own key setup always on top
 (load "esko-keys.el")
@@ -254,10 +266,25 @@
 
 
 
+(set-background-color "#170920")
+
 
 (load-file (let ((coding-system-for-read 'utf-8))
                  (shell-command-to-string "agda-mode locate")))
 
 
 
-(set-background-color "#170920")
+;; (require 'sublimity)
+;; (require 'sublimity-scroll)
+;; (sublimity-mode 1)
+
+;; (setq sublimity-scroll-weight 1
+;;       sublimity-scroll-drift-length 1)
+
+
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (haskell . t)
+   (http . t)))

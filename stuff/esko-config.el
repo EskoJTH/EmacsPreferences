@@ -1,4 +1,9 @@
-(global-auto-revert-mode t)
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil))) ;; scroll amount
+(setq mouse-wheel-progressive-speed t) ;;nil)
+(setq jit-lock-defer-time 0.15)
+(setq mouse-wheel-follow-mouse 't)
+;;(global-auto-revert-mode t)
 
 (menu-bar-mode -1);; Turn off the menu bar at the top
 (setq-default frame-title-format "%b (%f)") ;; full path in title bar
@@ -63,5 +68,10 @@
 
 ;; Shows a list of buffers
 ;;(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+
+
+;; (require 'sublimity-map) ;; experimental
+;; (require 'sublimity-attractive)
 
 
