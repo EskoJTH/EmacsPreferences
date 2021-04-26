@@ -62,6 +62,7 @@
  '(ivy-height 25)
  '(ivy-wrap t)
  '(lsp-keymap-prefix "m-sl")
+ '(org-babel-load-languages (quote ((python . t) (shell . t) (emacs-lisp . t))))
  '(package-selected-packages
    (quote
     (lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key helm-xref dap-mode)))
