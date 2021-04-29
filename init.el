@@ -1,3 +1,4 @@
+(global-unset-key (kbd "M-l"))
 
 (find-file "/home/esko/orkki.org")
 
@@ -58,6 +59,7 @@
    (quote
     ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
  '(highlight-symbol-foreground-color "cyan")
+ '(lsp-keymap-prefix "M-l")
  '(org-babel-load-languages
    (quote
     ((shell . t)
@@ -67,7 +69,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (counsel swiper ivy company-lsp yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
+    (ob-ammonite counsel swiper ivy company-lsp yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
  '(safe-local-variable-values
    (quote
     ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
@@ -156,7 +158,7 @@
 (load "esko-scala.el")
 
 ;; this shit does not work at all???
-;; (load "esko-lsp.el")
+(load "esko-lsp.el")
 
 
 
