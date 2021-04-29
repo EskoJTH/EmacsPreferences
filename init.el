@@ -60,11 +60,18 @@
  '(highlight-symbol-foreground-color "cyan")
  '(org-babel-load-languages
    (quote
-    ((shell . t)
+    ((python . t)
+     (shell . t)
      (emacs-lisp . t)
      (haskell . t)
      (http . t))))
  '(org-confirm-babel-evaluate nil)
+ '(history-delete-duplicates t)
+ '(indent-tabs-mode nil)
+ '(ivy-extra-directories nil)
+ '(ivy-height 25)
+ '(ivy-wrap t)
+ '(lsp-keymap-prefix "m-sl")
  '(package-selected-packages
    (quote
     (counsel swiper ivy company-lsp yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
