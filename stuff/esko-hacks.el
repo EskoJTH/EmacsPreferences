@@ -35,10 +35,10 @@
   
 )
 
-(defun my-org-mode-config ()
-  "To use with `org-mode-hook'"
-  (local-set-key (kbd "C-c h") 'my-babel-to-buffer)
-)
+;; (defun my-org-mode-config ()
+;;   "To use with `org-mode-hook'"
+;;   (local-set-key (kbd "C-c h") 'my-babel-to-buffer)
+;; )
 
 (add-hook 'org-mode-hook 'my-org-mode-config)
 
@@ -75,14 +75,14 @@
 
 
 
-(defun arkki-down ()
-  (interactive)
-  (shell-command "rsync -vr /run/user/1000/740857fcc4adcf94/Kdeconnect_Storage/ /home/esko/")
-  (find-file "/home/esko/arkki/arkki.org"))
+;; (defun arkki-down ()
+;;   (interactive)
+;;   (shell-command "rsync -vr /run/user/1000/740857fcc4adcf94/Kdeconnect_Storage/ /home/esko/")
+;;   (find-file "/home/esko/arkki/arkki.org"))
 
-(defun arkki-up ()
-  (interactive)
-  (shell-command "cp -rf /home/esko/arkki /run/user/1000/740857fcc4adcf94/Kdeconnect_Storage/"))
+;; (defun arkki-up ()
+;;   (interactive)
+;;   (shell-command "cp -rf /home/esko/arkki /run/user/1000/740857fcc4adcf94/Kdeconnect_Storage/"))
 
   
 
