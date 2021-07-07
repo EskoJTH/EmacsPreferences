@@ -65,7 +65,13 @@
  '(ivy-height 25)
  '(ivy-wrap t)
  '(lsp-keymap-prefix "M-l")
- '(org-babel-load-languages (quote ((python . t) (shell . t) (emacs-lisp . t)(http . t)(haskell . t))))
+ '(org-babel-load-languages
+   (quote
+    ((python . t)
+     (shell . t)
+     (emacs-lisp . t)
+     (http . t)
+     (haskell . t))))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
