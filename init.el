@@ -47,7 +47,7 @@
  '(region ((t (:background "#402050" :foreground "#e0f0ff")))))
 
 
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 110)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -69,7 +69,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (ob-ammonite counsel swiper ivy company-lsp yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
+    (lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key dap-mode)))
  '(safe-local-variable-values
    (quote
     ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
@@ -130,6 +130,16 @@
 (add-to-list 'load-path "~/.emacs.d/stuff")
 
 
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+    '(("." . "~/.saves/"))    ; don't litter my fs tree
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups
+
+
 
 (load "ob-http/ob-http.el")
 
@@ -157,9 +167,11 @@
 
 (load "esko-scala.el")
 
-;; this shit does not work at all???
+;; this shit does not work at all??? ;; I guess now it does?
 (load "esko-lsp.el")
 
+
+;;(load "esko-haskell.el")
 
 
 

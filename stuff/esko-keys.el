@@ -63,7 +63,7 @@ the current position of point, then move it to the beginning of the line."
     (define-key map (kbd "C-ö") 'delete-backward-char)
     (define-key map (kbd "M-ö") 'backward-kill-word)
     
-    (define-key map (kbd "C-x f") 'find-file)
+    (define-key map (kbd "C-x f") 'ido-find-file)
     (define-key map (kbd "C-x s") 'save-buffer)
 
 ;    (define-key map (kbd "M-x") 'execute-extended-command)

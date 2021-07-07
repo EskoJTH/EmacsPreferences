@@ -12,18 +12,18 @@
 ;;(global-set-key (kbd "C-å") 'helm-find-files)
 
 
-(global-set-key (kbd "C-s") 'swiper-isearch)
-(global-set-key (kbd "C-r") 'swiper-isearch-backward)
-(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-c C-s") 'swiper-isearch)
+(global-set-key (kbd "C-c sC-r") 'swiper-isearch-backward)
+;; (global-set-key (kbd "M-x") 'counsel-M-x)
 ;;(global-set-key (kbd "C-r") 'ivy-reverse-i-search)
 (global-set-key (kbd "C-'") 'ivy-avy)
-;; (global-set-key (kbd "M-x") 'counsel-M-x)
+;;(global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-å") 'ivy-insert-current) ;; C-i == tab
 (global-set-key (kbd "C-å") 'ivy-resume) ;; C-i == tab
 ;;(global-set-key (kbd "C-å") 'ivy-resume)
 ;;
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-;;(global-set-key (kbd "C-x f") 'counsel-find-file)
+;; (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;; (global-set-key (kbd "C-x f") 'counsel-find-file)
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 ;; (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 ;; (global-set-key (kbd "<f1> v") 'counsel-describe-variable)

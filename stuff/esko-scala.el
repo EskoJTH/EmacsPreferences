@@ -168,5 +168,26 @@
 ;;   (setq lsp-metals-treeview-show-when-views-received t)
 ;;   )
 
+;; (insert (string-trim-right (lsp--render-on-hover-content contents t)))
+(defun insert-scala-type-at-point-lsp-metals ()
+    "function to insert type over point in scala"
+    (interactive)
 
+    (let ((contents (-some->> (lsp--text-document-position-params)
+		      (lsp--make-request "textDocument/hover")
+		      (lsp--send-request)
+		      (lsp:hover-contents))))
+	(progn
+	  (previous-line)
+	  (move-end-of-line nil)
+	  (newline)
+	  (insert (string-trim-right (lsp--render-on-hover-content contents t)))
+	
+      )
+      )
+    )
 
+(add-hook 'scala-mode-hook 'esko-scala)
+(defun esko-scala ()
+  (define-key scala-mode-map (kbd "C-t") 'insert-scala-type-at-point-lsp-metals)
+  )
