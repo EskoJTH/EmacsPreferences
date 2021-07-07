@@ -59,13 +59,13 @@
    (quote
     ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
  '(highlight-symbol-foreground-color "cyan")
+ '(history-delete-duplicates t)
+ '(indent-tabs-mode nil)
+ '(ivy-extra-directories nil)
+ '(ivy-height 25)
+ '(ivy-wrap t)
  '(lsp-keymap-prefix "M-l")
- '(org-babel-load-languages
-   (quote
-    ((shell . t)
-     (emacs-lisp . t)
-     (haskell . t)
-     (http . t))))
+ '(org-babel-load-languages (quote ((python . t) (shell . t) (emacs-lisp . t)(http . t)(haskell . t))))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
