@@ -120,3 +120,7 @@
   )
 
 
+;; calculate difference of two lists
+(require 'cl-lib)
+(cl-set-difference '(1 2 3) '(2 3 4))
+

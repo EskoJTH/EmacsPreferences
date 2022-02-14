@@ -18,8 +18,8 @@
 ;;(global-set-key (kbd "C-r") 'ivy-reverse-i-search)
 (global-set-key (kbd "C-'") 'ivy-avy)
 ;; (global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-å") 'ivy-insert-current) ;; C-i == tab
-(global-set-key (kbd "C-å") 'ivy-resume) ;; C-i == tab
+;; (global-set-key (kbd "C-å") 'ivy-insert-current) ;; C-i == tab
+;;(global-set-key (kbd "C-å") 'ivy-resume) ;; C-i == tab
 ;;(global-set-key (kbd "C-å") 'ivy-resume)
 ;;
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)

@@ -55,31 +55,32 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-clang-executable "/usr/bin/clang-8")
+ '(flycheck-check-syntax-automatically '(save mode-enabled))
  '(highlight-symbol-colors
-   (quote
-    ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
+   '("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
  '(highlight-symbol-foreground-color "cyan")
- '(lsp-keymap-prefix "M-l")
- '(org-babel-load-languages
-   (quote
-    ((python . t)
-     (shell . t)
-     (emacs-lisp . t)
-     (haskell . t)
-     (http . t))))
- '(org-confirm-babel-evaluate nil)
  '(history-delete-duplicates t)
  '(indent-tabs-mode nil)
  '(ivy-extra-directories nil)
  '(ivy-height 25)
+ '(ivy-sort-matches-functions-alist '((t . ivy--shorter-matches-first) (t . ivy--prefix-sort)))
  '(ivy-wrap t)
- '(lsp-keymap-prefix "m-sl")
+ '(lsp-keymap-prefix "M-l")
+ '(lsp-ui-doc-delay 0)
+ '(lsp-ui-doc-show-with-cursor nil)
+ '(lsp-ui-doc-show-with-mouse nil)
+ '(lsp-ui-sideline-enable t)
+ '(org-babel-load-languages
+   '((python . t)
+     (shell . t)
+     (emacs-lisp . t)
+     (haskell . t)
+     (http . t)))
+ '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
-   (quote
-    (ob-ammonite counsel swiper ivy yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors)))
+   '(scad-mode lsp-haskell glsl-mode ob-ammonite counsel swiper ivy yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors))
  '(safe-local-variable-values
-   (quote
-    ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
+   '((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/"))))
 
 
 
@@ -122,13 +123,12 @@
 
 ;;multiple cursors
 (package-install 'multiple-cursors)
-(package-initialize)
+;;(package-initialize)
 (require 'multiple-cursors)
 ;;(list-colors-display)
 
 
 ;;(require 'cc-mode)
-
 
 
 (require 'company)
@@ -290,3 +290,12 @@
  '((emacs-lisp . t)
    (haskell . t)
    (http . t)))
+
+(require 'lsp)
+(require 'lsp-haskell)
+;; Hooks so haskell and literate haskell major modes trigger LSP setup
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
+
+
+(add-hook 'csv-mode-hook 'csv-align-mode)

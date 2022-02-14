@@ -168,5 +168,10 @@
 ;;   (setq lsp-metals-treeview-show-when-views-received t)
 ;;   )
 
+(add-hook 'scala-mode-hook 'esko-scala) (defun esko-scala () (define-key scala-mode-map (kbd "C-t") 'insert-scala-type-at-point-lsp-metals) )
 
+(add-hook 'scala-mode-hook 'esko-scala)
+(defun esko-scala ()
+  (define-key scala-mode-map (kbd "C-t") 'insert-scala-type-at-point-lsp-metals)
+  )
 

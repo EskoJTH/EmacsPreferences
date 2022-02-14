@@ -49,7 +49,7 @@ the current position of point, then move it to the beginning of the line."
     (define-key (current-global-map) (kbd "M-n") 'other-window)
     (define-key (current-global-map) (kbd "M-p") 'frame-bck)
 
-    (define-key (current-global-map) (kbd "C-å") 'runStuff)
+    ;;(define-key (current-global-map) (kbd "C-å") 'runStuff)
     (define-key (current-global-map) (kbd "M-å") 'magit-status)
     
     ;;Hotkeys
