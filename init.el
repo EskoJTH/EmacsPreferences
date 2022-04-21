@@ -64,6 +64,7 @@
  '(ivy-extra-directories nil)
  '(ivy-height 25)
  '(ivy-wrap t)
+ '(lsp-keep-workspace-alive nil)
  '(lsp-keymap-prefix "M-l")
  '(org-babel-load-languages
    (quote
@@ -75,7 +76,7 @@
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
    (quote
-    (lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key dap-mode)))
+    (lsp-haskell haskell-mode counsel swiper magit typescript-mode sudo-edit ivy rainbow-delimiters lsp-metals lsp-ui lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key dap-mode)))
  '(safe-local-variable-values
    (quote
     ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
