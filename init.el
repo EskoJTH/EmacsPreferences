@@ -177,6 +177,7 @@
 ;; this shit does not work at all??? ;; I guess now it does?
 (load "esko-lsp.el")
 
+(load "esko-org.el")
 
 ;;(load "esko-haskell.el")
 

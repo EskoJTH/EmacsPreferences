@@ -10,7 +10,7 @@
 (setq create-lockfiles nil) ;; No need for ~ files when editing
 (setq inhibit-startup-message t) ;; Go straight to scratch buffer on startup
 (load-theme 'wheatgrass t) ;; colors to be right
-(global-linum-mode t) ;; enable line numbers globally
+(global-display-line-numbers-mode t) ;; enable line numbers globally
 (setq show-paren-delay 0) ;; no delay on showing pairing parenthesis
 (show-paren-mode t) ;; show pairing parenthesis
 (tool-bar-mode -1) ;; poistaa toolbarin kÃ¤ytÃ¶stÃ¤ Tämä vekotin on kuin kamalalta kivikaudelta.
