@@ -42,7 +42,7 @@
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(package-initialize)
+;(package-initialize)
 
 (setq package-selected-packages '(lsp-mode yasnippet lsp-treemacs helm-lsp
     projectile hydra flycheck company avy which-key dap-mode))

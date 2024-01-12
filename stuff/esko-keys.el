@@ -2,6 +2,14 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-k") 'fix-kill)
+
+(defun fix-kill ()
+  "move to beginning of line, or indentation"
+  (interactive)
+  (setq this-command 'nil)
+  (setq last-command 'nil)
+  (kill-line))
 
 (defun beginning-of-line-or-indentation ()
   "move to beginning of line, or indentation"

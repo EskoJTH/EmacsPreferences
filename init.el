@@ -8,8 +8,11 @@
 
 
 (require 'package)
-(package-initialize)
+;(package-initialize)
 
+
+;; roami
+;; (setq org-roam-directory (file-truename "~/roami"))
 
 ;(custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -34,6 +37,11 @@
  ;; If there is more than one, they won't work right.
  '(custom-button-mouse ((t (:background "DarkOrchid2" :foreground "black" :box (:line-width 2 :style released-button)))))
  '(custom-button-pressed ((t (:background "magenta" :foreground "DarkOrchid4" :box (:line-width 2 :style pressed-button)))))
+ '(ediff-even-diff-A ((t (:background "dark slate gray"))))
+ '(ediff-even-diff-B ((t (:background "dark slate gray"))))
+ '(ediff-odd-diff-A ((t (:background "dark olive green"))))
+ '(ediff-odd-diff-B ((t (:background "dark olive green"))))
+ '(hl-line ((t (:inherit highlight :background "grey10"))))
  '(mode-line ((t (:background "SlateBlue4" :foreground "cyan" :box (:line-width -1 :style released-button)))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#54F"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#90F"))))
@@ -44,7 +52,7 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "#0Fa"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "yellow3"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "purple3"))))
- '(region ((t (:background "#402050" :foreground "#e0f0ff")))))
+ '(region ((t (:background "#402050" :foreground "red")))))
 
 
 (set-face-attribute 'default nil :height 110)
@@ -55,9 +63,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-clang-executable "/usr/bin/clang-8")
+ '(ediff-window-setup-function 'ediff-setup-windows-plain)
  '(highlight-symbol-colors
-   (quote
-    ("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab")))
+   '("dark magenta" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
  '(highlight-symbol-foreground-color "cyan")
  '(history-delete-duplicates t)
  '(indent-tabs-mode nil)
@@ -67,19 +75,16 @@
  '(lsp-keep-workspace-alive nil)
  '(lsp-keymap-prefix "M-l")
  '(org-babel-load-languages
-   (quote
-    ((python . t)
+   '((python . t)
      (shell . t)
      (emacs-lisp . t)
      (http . t)
-     (haskell . t))))
+     (haskell . t)))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
-   (quote
-    (lsp-haskell haskell-mode counsel swiper magit typescript-mode sudo-edit ivy rainbow-delimiters lsp-metals lsp-ui lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key dap-mode)))
+   '(lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key dap-mode))
  '(safe-local-variable-values
-   (quote
-    ((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/")))))
+   '((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/"))))
 
 
 
@@ -121,7 +126,7 @@
 
 ;;multiple cursors
 (package-install 'multiple-cursors)
-(package-initialize)
+;;(package-initialize)
 (require 'multiple-cursors)
 ;;(list-colors-display)
 
@@ -172,7 +177,7 @@
 (load "drsym.el")
 (drsym-load)
 
-(load "esko-scala.el")
+;;(load "esko-scala.el")
 
 ;; this shit does not work at all??? ;; I guess now it does?
 (load "esko-lsp.el")
@@ -296,4 +301,6 @@
  'org-babel-load-languages
  '((emacs-lisp . t)
    (haskell . t)
-   (http . t)))
+   (http . t)
+   ))
+(put 'downcase-region 'disabled nil)

@@ -40,7 +40,7 @@
 ;;   (local-set-key (kbd "C-c h") 'my-babel-to-buffer)
 ;; )
 
-(add-hook 'org-mode-hook 'my-org-mode-config)
+;;(add-hook 'org-mode-hook 'my-org-mode-config)
 
 
 

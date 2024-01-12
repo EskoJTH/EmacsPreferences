@@ -79,7 +79,7 @@
 ;; Add company-lsp backend for metals.
 ;;   (depending on your lsp-mode version it may be outdated see:
 ;;    https://github.com/emacs-lsp/lsp-mode/pull/1983)
-(use-package company-lsp)
+;(use-package company-lsp)
 
 ;; Use the Debug Adapter Protocol for running tests and debugging
 ;; (use-package posframe
@@ -190,4 +190,6 @@
 (add-hook 'scala-mode-hook 'esko-scala)
 (defun esko-scala ()
   (define-key scala-mode-map (kbd "C-t") 'insert-scala-type-at-point-lsp-metals)
+  (define-key scala-mode-map (kbd "C-M-å") 'insert-scala-type-at-point-lsp-metals)
+  
   )

@@ -10,7 +10,8 @@
 
 
 ;;(global-set-key (kbd "C-å") 'helm-find-files)
-
+(require 'swiper)
+(require 'counsel)
 
 (global-set-key (kbd "C-c C-s") 'swiper-isearch)
 (global-set-key (kbd "C-c C-r") 'swiper-isearch-backward)
