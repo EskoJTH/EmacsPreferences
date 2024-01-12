@@ -70,15 +70,10 @@
  '(lsp-ui-doc-show-with-cursor nil)
  '(lsp-ui-doc-show-with-mouse nil)
  '(lsp-ui-sideline-enable t)
- '(org-babel-load-languages
-   '((python . t)
-     (shell . t)
-     (emacs-lisp . t)
-     (haskell . t)
-     (http . t)))
+ '(org-babel-load-languages '((python . t) (shell . t) (emacs-lisp . t) (haskell . t)))
  '(org-confirm-babel-evaluate nil)
  '(package-selected-packages
-   '(scad-mode lsp-haskell glsl-mode ob-ammonite counsel swiper ivy yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors))
+   '(lsp-ui lsp-metals scad-mode lsp-haskell glsl-mode ob-ammonite counsel swiper ivy yasnippet sbt-mode use-package sudo-edit cql-mode ob-http restclient helm-tramp docker-tramp sublimity org cider scala-mode gnu-elpa-keyring-update chess minimap company-c-headers clang-format sr-speedbar function-args ggtags intero flymake-rust rust-mode highlight-symbol dumb-jump syntax-subword magit ## rainbow-delimiters multiple-cursors))
  '(safe-local-variable-values
    '((company-clang-arguments "-I/home/OmatProjektit/BatteryMon/"))))
 
@@ -130,7 +125,7 @@
 
 ;;(require 'cc-mode)
 
-
+(package-install 'company)
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
@@ -138,8 +133,8 @@
 (add-to-list 'load-path "~/.emacs.d/stuff")
 
 
-
-(load "ob-http/ob-http.el")
+;;TODO korjaa
+;;(load "ob-http/ob-http.el")
 
 ;; my own key setup always on top
 (load "esko-keys.el")
@@ -271,8 +266,8 @@
 (set-background-color "#170920")
 
 
-(load-file (let ((coding-system-for-read 'utf-8))
-                 (shell-command-to-string "agda-mode locate")))
+;; (load-file (let ((coding-system-for-read 'utf-8))
+;;                  (shell-command-to-string "agda-mode locate")))
 
 
 
@@ -288,8 +283,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
-   (haskell . t)
-   (http . t)))
+   (haskell . t)))
 
 (require 'lsp)
 (require 'lsp-haskell)

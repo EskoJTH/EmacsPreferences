@@ -35,6 +35,8 @@
 ;;  (scroll-bar-mode -1))
 
 ;; yay rainbows!
+(package-install 'rainbow-delimiters)
+(require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; Turn on recent file mode so that you can more easily switch to

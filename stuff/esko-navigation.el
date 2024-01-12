@@ -8,9 +8,13 @@
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
 
+(package-install 'counsel)
+(package-install 'swiper)
+(require 'swiper)
+(require 'counsel)
+
 
 ;;(global-set-key (kbd "C-å") 'helm-find-files)
-
 
 (global-set-key (kbd "C-s") 'swiper-isearch)
 (global-set-key (kbd "C-r") 'swiper-isearch-backward)
@@ -31,7 +35,8 @@
 ;; (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
 ;; (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 ;; (global-set-key (kbd "<f2> j") 'counsel-set-variable)
-(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+(global-set-key (kbd "C-x C-b") 'ivy-switch-buffer)
+(global-set-key (kbd "C-x b") 'ido-switch-buffer)
 (global-set-key (kbd "C-c v") 'ivy-push-view)
 (global-set-key (kbd "C-c V") 'ivy-pop-view)
 
